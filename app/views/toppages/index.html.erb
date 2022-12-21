@@ -1,6 +1,10 @@
-<div class="jumbotron">
-  <h1 class="display-4">KoreanDramas</h1>
-  <hr class="my-4">
-  <p>今までに観た韓国ドラマを共有しよう。</p>
-  <%= link_to 'サインイン', signup_path, class: 'btn btn-lg btn-primary' %>
+<div class="row">
+  <aside class="col-sm-3">
+    <%= form_with(model: @drama) do |f| %>
+      <%= f.submit '投稿', class: 'btn btn-primary w-100' %>
+    <% end %>
+  </aside>
+  <div class="col-sm-8">
+    <%= render 'dramas/dramas', dramas: @dramas %>
+  </div>
 </div>

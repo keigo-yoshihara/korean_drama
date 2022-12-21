@@ -1,0 +1,33 @@
+<% if dramas.any? %>
+  <ul class="list-unstyled mt-2">
+    <% dramas.each do |drama| %>
+      <li class="d-flex">
+        <img class="rounded me-2 mb-5" src="<%= gravatar_url(drama.user, { size: 64 }) %>" alt="">
+        <div>
+          <div>
+            <%= link_to drama.user.name, user_path(drama.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= drama.created_at %></span>
+          </div>
+          <div>
+            <p><%= drama.title %></p>
+            <p><%= drama.content %></p>
+            <p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  評価1~5
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <p>1</p>
+                  <p>2</p>
+                  <p>3</p>
+                  <p>4</p>
+                  <p>5</p>
+                </div>
+              </div>
+            </p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %>
