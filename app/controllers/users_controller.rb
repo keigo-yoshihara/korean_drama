@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @pagy, @users = pagy(User.order(id: :desc), items:20)
-  end
 
   def show
     @user = User.find(params[:id])

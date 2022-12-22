@@ -1,7 +1,7 @@
 <div class="row">
   <aside class="col-sm-3">
-    <%= form_with(model: @drama) do |f| %>
-      <%= f.submit '投稿', class: 'btn btn-primary w-100' %>
+    <% if logged_in? %>
+      <%= link_to '投稿', new_drama_path, class: 'btn btn-lg btn-primary w-100' %>
     <% end %>
   </aside>
   <div class="col-sm-8">

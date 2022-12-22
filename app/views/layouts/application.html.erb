@@ -11,6 +11,34 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+      .rate-form {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+      .rate-form input[type=radio] {
+        display: none;
+      }
+      .rate-form label {
+        position: relative;
+        padding: 0 5px;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 35px;
+      }
+      .rate-form label:hover {
+        color: #ffcc00;
+      }
+      .rate-form label:hover ~ label {
+        color: #ffcc00;
+      }
+      .rate-form input[type=radio]:checked ~ label {
+        color: #ffcc00;
+      }
+      
+    </style>
   </head>
 
   <body data-turbolinks="false">

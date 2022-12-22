@@ -1,5 +1,8 @@
 class ToppagesController < ApplicationController
   def index
-    @pagy, @dramas = pagy(current_user.dramas.order(id: :desc))
+    if logged_in?
+      @drama = current_user.dramas.build
+    end
+    @pagy, @dramas = pagy(Drama.all.order(id: :desc))
   end
 end

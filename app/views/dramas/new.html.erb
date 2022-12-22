@@ -1,0 +1,26 @@
+<h1>韓国ドラマ投稿ページ</h1>
+
+<%= form_with(model: @drama ) do |f| %>
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_area :title, class: 'form-control', rows: 1 %>
+  
+    <div class="mb-3">
+      <%= f.label :content, '感想' %>
+      <%= f.text_area :content, class: 'form-control', rows: 5 %>
+    </div>
+ 
+  <div class="rate-form">
+    <input id="star5" type="radio" name="drama[rating]" value="5">
+    <label for="star5">★</label>
+    <input id="star4" type="radio" name="drama[rating]" value="4">
+    <label for="star4">★</label>
+    <input id="star3" type="radio" name="drama[rating]" value="3">
+    <label for="star3">★</label>
+    <input id="star2" type="radio" name="drama[rating]" value="2">
+    <label for="star2">★</label>
+    <input id="star1" type="radio" name="drama[rating]" value="1">
+    <label for="star1">★</label>
+  </div>
+  
+  <%= f.submit '投稿' %>
+<% end %>
