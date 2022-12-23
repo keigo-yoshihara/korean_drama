@@ -1,7 +1,7 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid ps-5 pe-5">
-      <a class="navbar-brand" href="/">KreanDramas</a>
+      <a class="navbar-brand" href="/">韓ドラ広場</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,6 +9,8 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <% if logged_in? %>
           <div class="btn-group">
+            <%= link_to '投稿する', new_drama_path, class: 'btn btn-lg btn-primary w-100' %>
+            
             <button type="button" class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.name %></button>
             <ul class="dropdown-menu dropdown-menu-end">
               <li class="dropdown-item"><%= link_to 'Myprofile', user_path(current_user), class: 'nav-link' %></li>
