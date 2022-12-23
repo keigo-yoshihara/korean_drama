@@ -29,6 +29,7 @@
             <% if current_user == drama.user %>
               <%= link_to "削除", drama, method: :delete, data: { confirm: "削除してもよろしいですか？" }, class: 'btn btn-danger btn-sm' %>
             <% end %>
+            <%= render 'favorites/favorite_button', drama:drama %>
           </div>
         </div>
       </li>

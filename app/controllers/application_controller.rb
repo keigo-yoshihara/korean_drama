@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def counts(user)
+    @count_dramas = user.dramas.count
+    @count_fav_dramas = user.fav_dramas.count
+  end
 end

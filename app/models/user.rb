@@ -7,4 +7,19 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :dramas
+  has_many :favorites, dependent: :destroy
+  has_many :fav_dramas, through: :favorites, source: :drama
+  
+  def favorite(other_drama)
+    self.favorites.find_or_create_by(drama_id: other_drama.id)
+  end
+  
+  def unfavorite(other_drama)
+    favorite = self.favorites.find_by(drama_id: other_drama.id)
+    favorite.destroy if favorite
+  end
+  
+  def favorite?(other_drama)
+    self.fav_dramas.include?(other_drama)
+  end
 end

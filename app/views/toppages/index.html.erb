@@ -1,10 +1,10 @@
 <div class="row">
   <aside class="col-sm-3">
     <% if logged_in? %>
-      <%= link_to '投稿', new_drama_path, class: 'btn btn-lg btn-primary w-100' %>
+      <%= link_to '投稿する', new_drama_path, class: 'btn btn-lg btn-primary w-100' %>
     <% end %>
   </aside>
-  <div class="col-sm-8">
+  <div class="col-sm-9">
     <%= render 'dramas/dramas', dramas: @dramas %>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_21_071125) do
+ActiveRecord::Schema.define(version: 2022_12_23_052215) do
 
   create_table "dramas", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2022_12_21_071125) do
     t.index ["user_id"], name: "index_dramas_on_user_id"
   end
 
+  create_table "favorites", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "drama_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["drama_id"], name: "index_favorites_on_drama_id"
+    t.index ["user_id", "drama_id"], name: "index_favorites_on_user_id_and_drama_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -31,4 +41,6 @@ ActiveRecord::Schema.define(version: 2022_12_21_071125) do
   end
 
   add_foreign_key "dramas", "users"
+  add_foreign_key "favorites", "dramas"
+  add_foreign_key "favorites", "users"
 end
