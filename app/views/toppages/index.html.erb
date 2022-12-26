@@ -1,10 +1,23 @@
 <div class="row">
-  <!--<aside class="col-sm-3">-->
-  <!--  <% if logged_in? %>-->
-  <!--    <%= link_to '投稿する', new_drama_path, class: 'btn btn-lg btn-primary w-100' %>-->
-  <!--  <% end %>-->
-  <!--</aside>-->
-  <div class="col-sm-12">
+  <% if logged_in? %>
+    <div class="col-sm-9">
     <%= render 'dramas/dramas', dramas: @dramas %>
-  </div>
+    </div>
+    
+    <div class="col-sm-3">
+      <%= image_tag('itewhon.png') %>
+    </div>
+  <% else %>
+    <div class="alert alert-warning" role="alert">
+    会員登録、ログインでドラマの投稿、観たいリストに追加できます。
+    </div>
+    
+    <div class="col-sm-9">
+    <%= render 'dramas/dramas', dramas: @dramas %>
+    </div>
+    
+    <div class="col-sm-3">
+      <%= image_tag '/images/23000845.png' %>
+    </div>
+  <% end %>
 </div>

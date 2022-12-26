@@ -6,6 +6,6 @@
 <% else %>
   <%= form_with(model: current_user.favorites.build) do |f| %>
     <%= hidden_field_tag :drama_id, drama.id %>
-    <%= f.submit '観たいリストに追加', class: 'btn btn-primary w-100' %>
+    <%= f.submit '観たいリストに追加', class: 'btn btn-primary w-50' %>
   <% end %>
 <% end %>

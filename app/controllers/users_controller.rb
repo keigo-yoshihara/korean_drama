@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:fav_dramas, :likes]
+  before_action :require_user_logged_in, only: [:fav_dramas, :likes, :destroy]
 
   def show
     @user = User.find(params[:id])
@@ -21,6 +21,13 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new
     end
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = '退会しました。'
+    redirect_to root_url
   end
   
   def fav_dramas
