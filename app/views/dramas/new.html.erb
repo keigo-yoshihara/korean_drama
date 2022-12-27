@@ -1,14 +1,16 @@
 <h1>韓国ドラマ投稿ページ</h1>
 
-<%= form_with(model: @drama ) do |f| %>
+
+  <%= form_with(model: @drama ) do |f| %>
     <%= f.label :title, 'タイトル' %>
     <%= f.text_area :title, class: 'form-control', rows: 1 %>
-  
+    <br>
     <div class="mb-3">
       <%= f.label :content, '感想' %>
       <%= f.text_area :content, class: 'form-control', rows: 5 %>
     </div>
  
+  <p>評価</p>
   <div class="rate-form">
     <input id="star5" type="radio" name="drama[rating]" value="5">
     <label for="star5">★</label>
@@ -21,6 +23,11 @@
     <input id="star1" type="radio" name="drama[rating]" value="1">
     <label for="star1">★</label>
   </div>
-  
+  <br>
   <%= f.submit '投稿' %>
-<% end %>
+  <% end %>
+
+
+<div class="float-end" >
+  <%= image_tag 'tyamisuru.jpeg' %>
+</div>

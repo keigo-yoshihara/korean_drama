@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-sm-4">
+  <aside class="col-sm-3">
     <div class="card">
       <div class="card-header">
         <h3 class="card-title"><%= @user.name %></h3>
@@ -9,7 +9,7 @@
       </div>
     </div>
   </aside>
-  <div class="col-sm-8">
+  <div class="col-sm-9">
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿したドラマ一覧<span class ="badge bg-secondary"><%= @count_dramas %></span></a></li>
       <li class="nav-item"><a href="<%= likes_user_path(current_user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(current_user)) %>">観たいリストに追加したドラマ<span class="badge bg-secondary"><%= @count_fav_dramas %></span></a></li>

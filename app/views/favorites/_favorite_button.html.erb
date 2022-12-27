@@ -1,7 +1,7 @@
 <% if current_user.favorite?(drama) %>
   <%= form_with(model: current_user.favorites.find_by(drama_id: drama.id), method: :delete) do |f| %>
     <%= hidden_field_tag :drama_id, drama.id %>
-    <%= f.submit '観たいリストから削除', class: 'btn btn-danger w-100' %>
+    <%= f.submit '観たいリストから削除', class: 'btn btn-danger w-50' %>
   <% end %>
 <% else %>
   <%= form_with(model: current_user.favorites.build) do |f| %>
