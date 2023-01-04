@@ -1,24 +1,29 @@
-<div class="row">
-  <% if logged_in? %>
-    <div class="col-sm-9">
-    <%= render 'dramas/dramas', dramas: @dramas %>
-    </div>
-    
-    <div class="col-sm-3">
-      <%= image_tag('itewhon.png') %>
-    </div>
-  <% else %>
-    <div class="alert alert-warning" role="alert">
-    会員登録、ログインでドラマの投稿、観たいリストに追加できます。
-    </div>
-    
-    <div class="col-sm-9">
-    <%= render 'dramas/dramas', dramas: @dramas %>
-    </div>
-    
-    <div class="col-sm-3">
-      <%= image_tag ('23334166.jpg') %>
-      <%= image_tag ('23276744.png') %>
-    </div>
-  <% end %>
-</div>
+<div class="background">
+  <div class="row">
+    <% if logged_in? %>
+      <div class="col-sm-9">
+      <%= render 'dramas/dramas', dramas: @dramas %>
+      </div>
+      
+      <div class="col-sm-3">
+        <%= image_tag('itewhon.png') %>
+      </div>
+    <% else %>
+      <div class="alert alert-warning" role="alert">
+      会員登録、ログインでドラマの投稿、観たいリストに追加できます。
+      </div>
+      
+      <div class="col-sm-8">
+      <%= render 'dramas/dramas', dramas: @dramas %>
+      </div>
+      
+      <div class="col-sm-4">
+        <h3 class="widget-title">ようこそ、韓ドラ広場へ</h3>
+          <p>ご覧いただきありがとうございます！<br>
+          韓ドラ広場は鑑賞したドラマを感想をつけて共有できるサービスです。</p>
+        <%= image_tag ('23334166.jpg') %>
+        <%= image_tag ('23276744.png') %>
+      </div>
+    <% end %>
+  </div>
+</div> 

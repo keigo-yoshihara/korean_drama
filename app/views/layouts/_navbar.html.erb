@@ -9,20 +9,20 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <% if logged_in? %>
           <div class="btn-group">
-            <%= link_to '投稿する', new_drama_path, class: 'btn btn-lg btn-primary w-80' %>
+            <%= link_to '投稿する', new_drama_path, class: 'btn btn-lg btn-primary w-60' %>
             <button type="button" class="btn btn-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.name %></button>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li class="dropdown-item"><%= link_to 'Myprofile', user_path(current_user), class: 'nav-link' %></li>
+              <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user), class: 'nav-link' %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %></li>
+              <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to '退会', user_path(current_user), method: :delete, data: { confirm: "退会してもよろしいですか？" }, class: 'nav-link' %></li>
             </ul>
           </div>
         <% else %>
           <ul class="navbar-nav">
-            <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to '会員登録', signup_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
           </ul>
         <% end %>
       </div>

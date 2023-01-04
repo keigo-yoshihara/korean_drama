@@ -11,8 +11,8 @@
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="<%= drama_users_path(@drama) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿したドラマ</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">観たいリストに追加したドラマ</a></li>
+      <li class="nav-item"><a href="<%= drama_users_path(@drama) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">投稿したドラマ<span class ="badge bg-secondary"><%= @count_dramas %></span></a></li>
+      <li class="nav-item"><a href="<%= likes_user_path(current_user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(current_user)) %>">観たいリストに追加したドラマ<span class="badge bg-secondary"><%= @count_fav_dramas %></span></a></li>
     </ul>
     <%= render 'users', users: @dramas %>
   </div>
