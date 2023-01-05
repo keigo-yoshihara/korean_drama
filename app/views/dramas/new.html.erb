@@ -2,6 +2,17 @@
 
 
   <%= form_with(model: @drama ) do |f| %>
+  
+    <% if @drama.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @drama.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
     <%= f.label :title, 'タイトル' %>
     <%= f.text_area :title, class: 'form-control', rows: 1 %>
     <br>
@@ -28,5 +39,5 @@
   <% end %>
 
 <div class="float-end" >
-  <%= image_tag '23023923.png' %>
+  <%= image_tag '23023923.png', alt: "チャミスル"%>
 </div>

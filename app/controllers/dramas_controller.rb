@@ -14,7 +14,7 @@ class DramasController < ApplicationController
     else
       @pagy, @dramas = pagy(current_user.dramas.order(id: :desc))
       flash.now[:danger] = '投稿に失敗しました。'
-      render 'users/dramas'
+      render 'dramas/new'
     end
   end
 
