@@ -2,10 +2,7 @@
   <ul class="list-unstyled mt-2">
     <% dramas.each do |drama| %>
       <li class="row">
-        <div class="col-3">
-          <img class="rounded img-fluid me-2 mb-5" src="<%= gravatar_url(drama.user, { size: 96}) %>" alt="">
-        </div>
-        <div class="col-9">
+        <div class="col-12">
           <div>
             <%= link_to drama.user.name, user_path(drama.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= drama.created_at %></span>
           </div>
